@@ -27,10 +27,10 @@
 
 |Hacks | Details | 
 |----------|---------|
-| H-1      | CLOUD - CRUD simple with QUERY and BODY |
-| H-2      | LOCAL (UX/UI) - Upload image | 
-| H-3      | CLOUD (UX/UI) - CRUD with QUERY and BODY more upload image in (Module) |
-| H-4      | LOCAL JSONWEBTOKEN |
+| H-1      | CLOUD - CRUD basic with QUERY and BODY |
+| H-2      | LOCAL ( UX/UI ) - CU simple Upload image | 
+| H-3      | CLOUD ( UX/UI ) - CUD basic with BODY more upload image in (Module) |
+| H-4      | LOCAL - CR basic JSONWEBTOKEN |
 | H-5      | CLOUD / TEAM - CRUD upload image more jsonwebtoken with (Module)|
 
 <br/> 
@@ -99,17 +99,13 @@ users = [
 
 ## 🏆 H-2
 ```sh
-CREAR U INTERFAZ GRÁFICA CON HTML & CSS3, SI ES POSIBLE UTILIZAR FLEXBOX, PARA QUE EL FORMULARIO
-ESTE 100% DCENTRADO VERTICAL & HORIZONTALMENTE A LA VISTA MOBILE & DESKTOP,
-DONDE SE PERMITA SUBIR UNA IMAGEN
+CREAR UNA INTERFAZ GRÁFICA CON HTML & CSS3, SI ES POSIBLE UTILIZAR FLEXBOX, PARA QUE EL FORMULARIO
+ESTE 100% CENTRADO VERTICAL & HORIZONTAL A LA VISTA MOBILE & DESKTOP (RESPONSIVE)
+LA VISTA TIENE LA FUNCIÓN DE SUBIR UNA IMAGEN
 
 ---------------------------------------------------
 
-✔ POST / BODY    -  Subir imagén 
-
----------------------------------------------------
-
-🏹 Emplear el uso del rate-limit en los endpoints
+✔ POST / BODY    -  Subir imagen 
 
 ---------------------------------------------------
 
@@ -124,28 +120,83 @@ DONDE SE PERMITA SUBIR UNA IMAGEN
 
 ## 🏆 H-3
 ```sh
-* ENDPOINT:(PATH: "/h3")
+CREAR UN CUD QUE RESPONDA A LAS SIGUIENTES ACCIONES Y EMPLEO DE TECNOLOGÍAS,
+ADICIONAL EL CÓDIGO DEBE SER MODULAR,
+ABAJO TIENES EL MOCK DE DATOS & DEBE ESTAR DENTRO DE UN ARCHIVO mock.json:
 
-CREAR UN ENDPOINT QUE RESPONDA SI LA SOLICITUD ES DE TIPO "PUT"
 
-METHOD:   "PUT"
-TYPE: JSON
+users = [
+    {"email": "foo@example.com", "name": "foo", "age": 30, "role": "admin", "image": ""},
+    {"email": "bar@example.com", "name": "bar", "age": 25, "role": "editor", "image": ""},
+    {"email": "baz@example.com", "name": "baz", "age": 28, "role": "viewer", "image": ""},
+    {"email": "echo@example.com", "name": "echo", "age": 35, "role": "admin", "image": ""},
+    {"email": "qux@example.com", "name": "qux", "age": 29, "role": "viewer", "image": ""},
+    {"email": "delta@example.com", "name": "delta", "age": 47, "role": "viewer", "image": ""},
+    {"email": "zi@example.com", "name": "zi", "age": 20, "role": "viewer", "image": ""},
+    {"email": "charlie@example.com", "name": "charlie", "age": 31, "role": "viewer", "image": ""}
+]
 
-output => {"payload":"put"}
+---------------------------------------------------
+
+✔ POST / BODY    -  Permitir crear usuario con su imagen 
+✔ PUT / BODY     -  Actualizar los datos filtrado por email
+✔ DELETE / BODY -   Eliminar usuario por email
+
+---------------------------------------------------
+
+🏹 Emplear el uso del rate-limit en los endpoints
+🧪 utilizar el uso del checking de datos si es de tipo email, name, age
+🧩 Aplicar una nomenclatura de endpoints bajo versiones, colección ó estandares 
+   - ejemplo: /v1/user ||  /c1/user  ||  /std1/user
+
+---------------------------------------------------
+
+📊 Requiere el desarrollo de interfaz gráfica, como host Vercel
+📦 Almacenar el archivo mock de la lista de usuarios, en el store de S3 en AWS
+💻 Hospedar el backend en una VM del servicio EC2
+
+---------------------------------------------------
+
+📜 Ejemplo de estrucutra para el reponse
+
+ => {
+      "payload":data,
+      "status":200,
+       "error":{
+                "active":None,
+                "msg":None           
+               }
+   }
+
+---------------------------------------------------
+
 ```
 <br/>
 
 ## 🏆 H-4
 ```sh
-* ENDPOINT:(PATH: "/h4")
+CREAR UN CR QUE RESPONDA A 2 ACCIONES EN LA ELABORACION
+DE 1 TOKEN BAJO EL ESTANDAR JSONWEBTOKEN
 
-CREAR UN ENDOPOINT QUE RESPONDA SI LA SOLICITUD ES DE TIPO "DELETE"
+ESTRUCTURA DEL TOKEN
+{"sub": "foo@example.com", "name": "foo", "role": "admin", "exp":time}
 
-ENDPOINT: /h4
-METHOD:   "DELETE"
-TYPE: JSON
 
-output => {"payload":"delete"}
+---------------------------------------------------
+
+✔ POST / BODY    -  Crear jsonwebtoken
+✔ GET / BODY    -   Verificar jsonwebtoken 
+
+---------------------------------------------------
+
+⏳ Establecer un tiempo de caducidad de 1 minuto 
+
+---------------------------------------------------
+
+📊 No requiere el desarrollo de interfaz gráfica
+💻 No requiere, hospedar el backend en una VM del servicio EC2, sino en local
+
+---------------------------------------------------
 
 ```
 <br/>
@@ -162,98 +213,3 @@ FALSE - output => {}
 ```
 <br/>
 
-
-## 🏆 H-6
-```sh
-* ENDPOINT:(PATH: "/h6")
-
-CREAR UN ENDPOINT QUE RESPONDA SI LA SOLICITUD CORRESPONDE CON ALGÚN METODO HTTP: "GET" | "POST"| "DELETE"
-- EN CASO CONTRARIO RESPONDER CON LA SALIDA DE UN OBJETO sin payload data {} 
-- EN LA OPCIÓN type ANEXAR EL TIPO DE METODO HTTP
-- LA PROPIEDAD content EN method ESPECIFICAR EL METODO HTTP
-
-TRUE  - output => {"method":"type", "payload":"success", "error":False}
-FALSE - output => {"method":"type", "payload":None, "error":False}
-```
-<br/>
-
-## 🏆 H-7
-```sh
-* ENDPOINT:(PATH: "/h7?email="....."&name=".....")
-
-CREAR UN ENDPOINT QUE RESPONDA SI LA SOLICITUD ES DE TIPO "GET"
-SE DEBE ENVIAR EL VALOR DEL email, name MEDIANTE QUERY STRING
-
-output => {
-            "payload":{"email":"foo@foo.com", "name":"fooziman"},
-            "error":{"available":False,"err_msg":None},
-            "status":200
-          }
-
-```
-<br/>
-
-## 🏆 H-8
-```sh
-* ENDPOINT:(PATH: "/h8")
-
-CREAR UN ENDPOINT QUE RESPONDA SI LA SOLICITUD ES DE TIPO "POST"
-SE DEBE ENVIAR EL VALOR DEL email, name MEDIANTE BODY
-
-- ENVIAR LOS DATOS EN UN JSON {"email","add an email", "alias":"add an alias"}
-
-
-output => {
-            "payload":{"email":"foo@foo.com", "name":"fooziman"},
-            "error":{"available":False,"err_msg":None},
-            "status":200
-          }
-
-```
-<br/>
-
-
-## 🏆 H-9
-```sh
-* ENDPOINT:(PATH: "/h9?alias="...")
-
-CREAR UN ENDPOINT QUE RESPONDA SI LA SOLICITUD ES DE TIPO "GET"
-- SE DEBE ENVIAR EL VALOR DEL alias  MEDIANTE QUERY STRING
-- BUSCAR UN VALOR VALIDO DENTRO DE LA LISTA DE ALIAS Y MOSTRAR SU SALIDA
-- EN CASO DE NO ENCONTRAR EL alias EN LA LISTA DE ALIAS ENVIAR UN MENSAJE DE not found
-
-const Lista = ["foo","bar","baz","qux","fred"]
-
-
-TRUE - output => {
-            "payload":"bar",
-            "error":{"available":False,"err_msg":None},
-            "status":200
-          }
-
-
-FALSE - output => {
-            "payload":"not found",
-            "error":{"available":False,"err_msg":None},
-            "status":404
-          }
-
-```
-<br/>
-
-
-## 🏆 H-10 (PATH: "/h10")
-```sh
-* ENDPOINT:(PATH: "/h10")
-
-CREAR UN ENDPOINT QUE RESPONDA SI LA SOLICITUD ES DE TIPO "POST"
-- SE DEBE ENVIAR EL VALOR DEL alias  MEDIANTE BODY
-- BUSCAR UN VALOR VALIDO DENTRO DE LA LISTA DE ALIAS Y MOSTRAR SU SALIDA
-- EN CASO DE NO ENCONTRAR EL alias EN LA LISTA DE ALIAS ENVIAR UN MENSAJE DE not found
-
-const Lista = ["foo","bar","baz","qux","fred"]
-
-TRUE - output => {"payload":"bar"}
-FALSE - output => {"payload":"not found"}
-```
-<br/>
