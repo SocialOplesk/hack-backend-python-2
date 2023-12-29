@@ -27,11 +27,11 @@
 
 |Hacks | Details | 
 |----------|---------|
-| H-1      | CRUD simple with QUERY and BODY |
-| H-2      | Upload image (UX/UI) | 
-| H-3      | CRUD with QUERY and BODY more upload image in (Module & UX/UI) |
-| H-4      | JSONWEBTOKEN |
-| H-5      | CRUD upload image more jsonwebtoken with (Module) / GROUP |
+| H-1      | CLOUD - CRUD simple with QUERY and BODY |
+| H-2      | LOCAL (UX/UI) - Upload image | 
+| H-3      | CLOUD (UX/UI) - CRUD with QUERY and BODY more upload image in (Module) |
+| H-4      | LOCAL JSONWEBTOKEN |
+| H-5      | CLOUD / TEAM - CRUD upload image more jsonwebtoken with (Module)|
 
 <br/> 
 
@@ -39,7 +39,7 @@
 
 ```sh
 CREAR UN CRUD QUE RESPONDA A LAS SIGUIENTES ACCIONES Y EMPLEO DE TECNOLOGÍAS
-ABAJO TIENES EL MOCK DE DATOS:
+ABAJO TIENES EL MOCK DE DATOS & DEBE ESTAR DENTRO DE UN ARCHIVO mock.json:
 
 
 users = [
@@ -47,8 +47,10 @@ users = [
     {"email": "bar@example.com", "name": "bar", "age": 25, "role": "editor"},
     {"email": "baz@example.com", "name": "baz", "age": 28, "role": "viewer"},
     {"email": "echo@example.com", "name": "echo", "age": 35, "role": "admin"},
-    {"email": "qux@example.com", "name": "qux", "age": 29, "role": "viewer"}
-    {"email": "delta@example.com", "name": "delta", "age": 47, "role": "viewer"}
+    {"email": "qux@example.com", "name": "qux", "age": 29, "role": "viewer"},
+    {"email": "delta@example.com", "name": "delta", "age": 47, "role": "viewer"},
+    {"email": "zi@example.com", "name": "zi", "age": 20, "role": "viewer"},
+    {"email": "charlie@example.com", "name": "charlie", "age": 31, "role": "viewer"}
 ]
 
 
@@ -57,7 +59,7 @@ users = [
 ✔ POST / BODY    -  Permitir crear usuario
 ✔ PUT / BODY     -  Actualizar los datos filtrado por email
 ✔ GET / QUERY    -  Buscar usuario por el derivado del email
-✔ GET            -  Listar el total de usuarios
+✔ GET            -  Listar todos los usuarios ordenados por edad de menor a mayor
 ✔ GET / QUERY    -  Listar los usuarios en paginas de 2 usuarios por response si es mobile
 ✔ GET / QUERY    -  Listar los usuarios en paginas de 4 usuarios por response si es desktop
 ✔ DELETE / QUERY -  Eliminar usuario por email
@@ -97,8 +99,25 @@ users = [
 
 ## 🏆 H-2
 ```sh
-CREAR UN CRUD QUE RESPONDA A LAS SIGUIENTES ACCIONES Y EMPLEO DE TECNOLOGÍAS
-ABAJO TIENES EL MOCK DE DATOS:
+CREAR U INTERFAZ GRÁFICA CON HTML & CSS3, SI ES POSIBLE UTILIZAR FLEXBOX, PARA QUE EL FORMULARIO
+ESTE 100% DCENTRADO VERTICAL & HORIZONTALMENTE A LA VISTA MOBILE & DESKTOP,
+DONDE SE PERMITA SUBIR UNA IMAGEN
+
+---------------------------------------------------
+
+✔ POST / BODY    -  Subir imagén 
+
+---------------------------------------------------
+
+🏹 Emplear el uso del rate-limit en los endpoints
+
+---------------------------------------------------
+
+📊 Requiere el desarrollo de interfaz gráfica, "no requiere" deploy en nube
+📦 No requiere, almacenar las imágenes en el store de S3 en AWS, sino en local
+💻 No requiere, hospedar el backend en una VM del servicio EC2, sino en local
+
+---------------------------------------------------
 
 ```
 <br/>
