@@ -38,7 +38,7 @@
 ## 🏆 H-1 
 
 ```sh
-CREAR UN CRUD QUE RESPONDA A LAS SIGUIENTES ACCIONES Y EMPLEO DE TECNOLOGÍAS
+CREAR UN CRUD QUE RESPONDA A LAS SIGUIENTES ACCIONES & EMPLEO DE TECNOLOGÍAS
 ABAJO TIENES EL MOCK DE DATOS & DEBE ESTAR DENTRO DE UN ARCHIVO mock.json:
 
 
@@ -68,7 +68,7 @@ users = [
 
 🏹 Emplear el uso del rate-limit en los endpoints
 🧪 utilizar el uso del checking de datos si es de tipo email, name, age
-🧩 Aplicar una nomenclatura de endpoints bajo un estandar de versiones y  tipo de dispositivo
+🧩 Aplicar una nomenclatura de endpoints bajo un estandar de versiones & tipo de dispositivo
    - ejemplo: /v1/mobile/user || /v1/desktop/user || /v1/general/user
    - ejemplo: /v1/m/user      || /v1/d/user       || /v1/g/user
 
@@ -120,8 +120,8 @@ LA VISTA TIENE LA FUNCIÓN DE SUBIR UNA IMAGEN
 
 ## 🏆 H-3
 ```sh
-CREAR UN CUD QUE RESPONDA A LAS SIGUIENTES ACCIONES Y EMPLEO DE TECNOLOGÍAS,
-ADICIONAL EL CÓDIGO DEBE SER MODULAR,
+CREAR UN CUD QUE RESPONDA A LAS SIGUIENTES ACCIONES & EMPLEO DE TECNOLOGÍAS,
+ADICIONAL EL CÓDIGO DEBE SER MODULAR & PERMITIR ALMACENAR IMÁGENES
 ABAJO TIENES EL MOCK DE DATOS & DEBE ESTAR DENTRO DE UN ARCHIVO mock.json:
 
 
@@ -203,13 +203,69 @@ ESTRUCTURA DEL TOKEN
 
 ## 🏆 H-5
 ```sh
-* ENDPOINT:(PATH: "/h5")
+CREAR UN CUD QUE RESPONDA A LAS SIGUIENTES ACCIONES & EMPLEO DE TECNOLOGÍAS,
+ADICIONAL EL CÓDIGO DEBE SER MODULAR & PERMITIR ALMACENAR IMÁGENES
+ABAJO TIENES EL MOCK DE DATOS & DEBE ESTAR DENTRO DE UN ARCHIVO mock.json:
 
-CREAR UN ENDPOINT QUE RESPONDA SI LA SOLICITUD ES DE TIPO "GET"
-EN CASO CONTRARIO RESPONDER CON LA SALIDA DE UN OBJETO {} SIN PROPIEDADES
 
-TRUE  - output => {"payload":"success", "error": False}
-FALSE - output => {}
+ESTRUCTURA DEL TOKEN
+{"sub": "foo@example.com", "name": "foo", "role": "admin", "exp":time}
+
+
+users = [
+    {"email": "foo@example.com", "name": "foo", "age": 30, "role": "admin", "image": ""},
+    {"email": "bar@example.com", "name": "bar", "age": 25, "role": "editor", "image": ""},
+    {"email": "baz@example.com", "name": "baz", "age": 28, "role": "viewer", "image": ""},
+    {"email": "echo@example.com", "name": "echo", "age": 35, "role": "admin", "image": ""},
+    {"email": "qux@example.com", "name": "qux", "age": 29, "role": "viewer", "image": ""},
+    {"email": "delta@example.com", "name": "delta", "age": 47, "role": "viewer", "image": ""},
+    {"email": "zi@example.com", "name": "zi", "age": 20, "role": "viewer", "image": ""},
+    {"email": "charlie@example.com", "name": "charlie", "age": 31, "role": "viewer", "image": ""}
+]
+
+
+---------------------------------------------------
+
+✔ POST / BODY    -  Permitir crear usuario
+✔ PUT / BODY     -  Actualizar los datos filtrado por email
+✔ GET / QUERY    -  Buscar usuario por el derivado del email
+✔ GET            -  Listar todos los usuarios ordenados por la inicial del nombre 
+✔ GET / QUERY    -  Listar los usuarios en paginas de 3 usuarios por response si es mobile
+✔ GET / QUERY    -  Listar los usuarios en paginas de 5 usuarios por response si es desktop
+✔ DELETE / QUERY -  Eliminar usuario por email
+✔ POST / BODY    -  Crear jsonwebtoken
+✔ GET / BODY    -   Verificar jsonwebtoken 
+
+---------------------------------------------------
+
+🏹 Emplear el uso del rate-limit en los endpoints
+🧪 utilizar el uso del checking de datos si es de tipo email, name, age
+🧩 Aplicar alguna de estas nomenclaturas en los endpoints bajo un estandar de versiones & tipo de dispositivo
+   - ejemplo: /v1/mobile/user || /v1/desktop/user || /v1/general/user
+   - ejemplo: /v1/m/user      || /v1/d/user       || /v1/g/user
+   - ejemplo: /c1/m/user      || /c1/d/user       || /c1/g/user
+   - ejemplo: /std1/m/user    || /std1/d/user     || /std1/g/user
+
+---------------------------------------------------
+
+📊 No requiere el desarrollo de interfaz gráfica, es 100% backend
+📦 Almacenar el archivo mock de la lista de usuarios, en el store de S3 en AWS
+💻 Hospedar el backend en una VM del servicio EC2
+
+---------------------------------------------------
+
+📜 Ejemplo de estrucutra para el reponse
+
+ => {
+      "payload":data,
+      "status":200,
+       "error":{
+                "active":None,
+                "msg":None           
+               }
+   }
+
+---------------------------------------------------
 ```
 <br/>
 
