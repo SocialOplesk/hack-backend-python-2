@@ -28,10 +28,9 @@
 |Hacks | Details | 
 |----------|---------|
 | H-1      | CLOUD - CRUD basic with QUERY and BODY |
-| H-2      | LOCAL ( UX/UI ) - CU simple Upload image | 
-| H-3      | CLOUD ( UX/UI ) - CUD basic with BODY more upload image in (Module) |
-| H-4      | LOCAL - CR basic JSONWEBTOKEN |
-| H-5      | CLOUD / TEAM - CRUD upload image more jsonwebtoken with (Module)|
+| H-2      | CLOUD ( UX/UI ) - CUD basic with BODY more upload image in (Module) |
+| H-3      | LOCAL - CR basic JSONWEBTOKEN |
+| H-4      | CLOUD / TEAM - CRUD upload image more jsonwebtoken with (Module)|
 
 <br/> 
 
@@ -99,27 +98,6 @@ users = [
 
 ## 🏆 H-2
 ```sh
-CREAR UNA INTERFAZ GRÁFICA CON HTML & CSS3, SI ES POSIBLE UTILIZAR FLEXBOX, PARA QUE EL FORMULARIO
-ESTE 100% CENTRADO VERTICAL & HORIZONTAL A LA VISTA MOBILE & DESKTOP (RESPONSIVE)
-LA VISTA TIENE LA FUNCIÓN DE SUBIR UNA IMAGEN
-
----------------------------------------------------
-
-✔ POST / BODY    -  Subir imagen 
-
----------------------------------------------------
-
-📊 Requiere el desarrollo de interfaz gráfica, "no requiere" deploy en nube
-📦 No requiere, almacenar las imágenes en el store de S3 en AWS, sino en local
-💻 No requiere, hospedar el backend en una VM del servicio EC2, sino en local
-
----------------------------------------------------
-
-```
-<br/>
-
-## 🏆 H-3
-```sh
 CREAR UN CUD QUE RESPONDA A LAS SIGUIENTES ACCIONES & EMPLEO DE TECNOLOGÍAS,
 ADICIONAL EL CÓDIGO DEBE SER MODULAR & PERMITIR ALMACENAR IMÁGENES
 ABAJO TIENES EL MOCK DE DATOS & DEBE ESTAR DENTRO DE UN ARCHIVO mock.json:
@@ -173,7 +151,7 @@ users = [
 ```
 <br/>
 
-## 🏆 H-4
+## 🏆 H-3
 ```sh
 CREAR UN CR QUE RESPONDA A 2 ACCIONES EN LA ELABORACION
 DE 1 TOKEN BAJO EL ESTANDAR JSONWEBTOKEN
@@ -201,7 +179,7 @@ ESTRUCTURA DEL TOKEN
 ```
 <br/>
 
-## 🏆 H-5
+## 🏆 H-4
 ```sh
 CREAR UN CUD QUE RESPONDA A LAS SIGUIENTES ACCIONES & EMPLEO DE TECNOLOGÍAS,
 ADICIONAL EL CÓDIGO DEBE SER MODULAR & PERMITIR ALMACENAR IMÁGENES
