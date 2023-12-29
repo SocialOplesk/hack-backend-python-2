@@ -27,40 +27,79 @@
 
 |Hacks | Details | 
 |----------|---------|
-| H-1      | CRUD with QUERY and BODY |
-| H-2      | Upload image | 
-| H-3      | CRUD  with QUERY and BODY more upload image in (module) |
+| H-1      | CRUD simple with QUERY and BODY |
+| H-2      | Upload image (UX/UI) | 
+| H-3      | CRUD with QUERY and BODY more upload image in (Module & UX/UI) |
 | H-4      | JSONWEBTOKEN |
-| H-5      | CRUD with (module) / GROUP |
-| H-6      | CRUD upload image more jsonwebtoken with (module) / GROUP |
+| H-5      | CRUD upload image more jsonwebtoken with (Module) / GROUP |
 
 <br/> 
 
 ## 🏆 H-1 
 
 ```sh
-* ENDPOINT:(PATH: "/h1")
+CREAR UN CRUD QUE RESPONDA A LAS SIGUIENTES ACCIONES Y EMPLEO DE TECNOLOGÍAS
+ABAJO TIENES EL MOCK DE DATOS:
 
-CREAR UN ENDPOINT QUE RESPONDA SI LA SOLICITUD ES DE TIPO "GET"
 
-METHOD:   "GET"
-TYPE: JSON
+users = [
+    {"email": "foo@example.com", "name": "foo", "age": 30, "role": "admin"},
+    {"email": "bar@example.com", "name": "bar", "age": 25, "role": "editor"},
+    {"email": "baz@example.com", "name": "baz", "age": 28, "role": "viewer"},
+    {"email": "echo@example.com", "name": "echo", "age": 35, "role": "admin"},
+    {"email": "qux@example.com", "name": "qux", "age": 29, "role": "viewer"}
+    {"email": "delta@example.com", "name": "delta", "age": 47, "role": "viewer"}
+]
 
-output => {"payload":"get"}
+
+---------------------------------------------------
+
+✔ POST / BODY    -  Permitir crear usuario
+✔ PUT / BODY     -  Actualizar los datos filtrado por email
+✔ GET / QUERY    -  Buscar usuario por el derivado del email
+✔ GET            -  Listar el total de usuarios
+✔ GET / QUERY    -  Listar los usuarios en paginas de 2 usuarios por response si es mobile
+✔ GET / QUERY    -  Listar los usuarios en paginas de 4 usuarios por response si es desktop
+✔ DELETE / QUERY -  Eliminar usuario por email
+
+---------------------------------------------------
+
+🏹 Emplear el uso del rate-limit en los endpoints
+🧪 utilizar el uso del checking de datos si es de tipo email, name, age
+🧩 Aplicar una nomenclatura de endpoints bajo un estandar de versiones y  tipo de dispositivo
+   - ejemplo: /v1/mobile/user || /v1/desktop/user || /v1/general/user
+   - ejemplo: /v1/m/user      || /v1/d/user       || /v1/g/user
+
+---------------------------------------------------
+
+📊 No requiere el desarrollo de interfaz gráfica, es 100% backend
+📦 Almacenar el archivo mock de la lista de usuarios, en el store de S3 en AWS
+💻 Hospedar el backend en una VM del servicio EC2
+
+---------------------------------------------------
+
+📜 Ejemplo de estrucutra para el reponse
+
+ => {
+      "payload":data,
+      "status":200,
+       "error":{
+                "active":None,
+                "msg":None           
+               }
+   }
+
+---------------------------------------------------
+
 ```
 <br/>
 
 
 ## 🏆 H-2
 ```sh
-* ENDPOINT:(PATH: "/h2")
+CREAR UN CRUD QUE RESPONDA A LAS SIGUIENTES ACCIONES Y EMPLEO DE TECNOLOGÍAS
+ABAJO TIENES EL MOCK DE DATOS:
 
-CREAR UN ENDPOINT QUE RESPONDA SI LA SOLICITUD ES DE TIPO "POST"
-
-METHOD:   "POST"
-TYPE: JSON
-
-output => {"payload":"post"}
 ```
 <br/>
 
