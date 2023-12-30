@@ -79,7 +79,7 @@ users = [
 
 ---------------------------------------------------
 
-📜 Ejemplo de estrucutra para el reponse
+📜 Ejemplo de estrucutra para el response
 
  => {
       "payload":data,
@@ -135,7 +135,7 @@ users = [
 
 ---------------------------------------------------
 
-📜 Ejemplo de estrucutra para el reponse
+📜 Ejemplo de estrucutra para el response
 
  => {
       "payload":data,
@@ -232,7 +232,7 @@ users = [
 
 ---------------------------------------------------
 
-📜 Ejemplo de estrucutra para el reponse
+📜 Ejemplo de estrucutra para el response
 
  => {
       "payload":data,
