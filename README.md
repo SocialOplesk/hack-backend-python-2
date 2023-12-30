@@ -207,7 +207,7 @@ users = [
 ✔ POST / BODY    -  Permitir crear usuario
 ✔ PUT / BODY     -  Actualizar los datos filtrado por email
 ✔ GET / QUERY    -  Buscar usuario por el derivado del email
-✔ GET            -  Listar todos los usuarios ordenados por la inicial del nombre 
+✔ GET            -  Listar todos los usuarios ordenados por la inicial del nombre de A a la Z
 ✔ GET / QUERY    -  Listar los usuarios en paginas de 3 usuarios por response si es mobile
 ✔ GET / QUERY    -  Listar los usuarios en paginas de 5 usuarios por response si es desktop
 ✔ DELETE / QUERY -  Eliminar usuario por email
