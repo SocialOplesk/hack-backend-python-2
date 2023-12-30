@@ -225,7 +225,11 @@ users = [
    - ejemplo: /std1/m/user    || /std1/d/user     || /std1/g/user
 
 ---------------------------------------------------
-🔐 Los endpoints responden si existe un token(excepto el endpoint crear usuario), usar middleware
+
+⏳ Establecer un tiempo de caducidad de 1 minuto 
+🔐 Los endpoints responden si existe un token(excepto el endpoint crear usuario)
+    usar middleware para validar la existencia del token
+---------------------------------------------------
 📊 No requiere el desarrollo de interfaz gráfica, es 100% backend
 📦 Almacenar el archivo mock de la lista de usuarios, en el store de S3 en AWS
 💻 Hospedar el backend en una VM del servicio EC2
